@@ -1,0 +1,16 @@
+# depslib dependency file v1.0
+1430865417 source:/home/turupawn/Clases/Progra3/Clases/MiClase.cpp
+	"MiClase.h"
+
+1430865085 source:/home/turupawn/Clases/Progra3/Clases/main.cpp
+	<iostream>
+	"MiClase.h"
+	"MiOtraClase.h"
+
+1430865596 /home/turupawn/Clases/Progra3/Clases/MiClase.h
+	<iostream>
+
+1430865584 /home/turupawn/Clases/Progra3/Clases/MiOtraClase.h
+	<iostream>
+	"MiClase.h"
+

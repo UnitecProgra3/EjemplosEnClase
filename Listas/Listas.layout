@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_layout_file>
+	<ActiveTarget name="Debug" />
+	<File name="Lista.cpp" open="1" top="0" tabpos="5">
+		<Cursor position="19" topLine="0" />
+	</File>
+	<File name="Lista.h" open="1" top="0" tabpos="4">
+		<Cursor position="90" topLine="0" />
+	</File>
+	<File name="Nodo.cpp" open="1" top="0" tabpos="3">
+		<Cursor position="18" topLine="0" />
+	</File>
+	<File name="main.cpp" open="1" top="1" tabpos="1">
+		<Cursor position="79" topLine="3" />
+	</File>
+</CodeBlocks_layout_file>
