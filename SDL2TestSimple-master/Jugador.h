@@ -15,6 +15,8 @@ class Jugador : public Personaje
         list<Personaje*>*personajes;
         int velocidad;
         int velocidad_bala;
+        vector<SDL_Texture*> explosiones;
+        SDL_Rect rect;
 
         void dibujar();
         void logica();

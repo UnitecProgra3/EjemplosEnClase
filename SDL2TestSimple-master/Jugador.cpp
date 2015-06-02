@@ -1,5 +1,25 @@
 #include "Jugador.h"
 
+string toString(int number)
+{
+    if (number == 0)
+        return "0";
+
+    if(number < 0)
+        return "-"+toString(-number);
+
+    std::string temp="";
+    std::string returnvalue="";
+    while (number>0)
+    {
+        temp+=number%10+48;
+        number/=10;
+    }
+    for (int i=0;i<(int)temp.length();i++)
+        returnvalue+=temp[temp.length()-i-1];
+    return returnvalue;
+}
+
 Jugador::Jugador(SDL_Renderer *renderer,list<Personaje*>*personajes)
 {
     this->renderer = renderer;
@@ -21,6 +41,13 @@ Jugador::Jugador(SDL_Renderer *renderer,list<Personaje*>*personajes)
 
     velocidad=3;
     velocidad_bala=10;
+
+
+    for(int i=1;i<65;i++)
+    {
+        string str="explosion/"+toString(i)+".png";
+        explosiones.push_back(IMG_LoadTexture(renderer,str.c_str()));
+    }
 }
 
 void Jugador::dibujar()
@@ -28,6 +55,11 @@ void Jugador::dibujar()
     SDL_RenderCopy(renderer, textura, NULL, &rect_textura);
     for(int i=0;i<rect_balas.size();i++)
         SDL_RenderCopy(renderer, textura_bala, NULL, &rect_balas[i]);
+
+    rect.w=128;
+    rect.h=128;
+
+    SDL_RenderCopy(renderer, explosiones[frame%64], NULL, &rect);
 }
 
 void Jugador::logica()
@@ -81,6 +113,8 @@ void Jugador::logica()
                 && (rect1.y>rect2.y+rect2.h)==false//Muy abajo
                )
             {
+                rect.x=rect2.x;
+                rect.y=rect2.y;
                 personajes->erase(i);
                 return;
             }

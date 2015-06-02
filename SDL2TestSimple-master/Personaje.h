@@ -3,6 +3,11 @@
 
 #include<SDL2/SDL.h>
 #include<SDL2/SDL_image.h>
+#include<vector>
+#include<string>
+#include<iostream>
+
+using namespace std;
 
 class Personaje
 {
